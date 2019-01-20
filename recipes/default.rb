@@ -20,6 +20,10 @@
 
 include_recipe 'apt'
 include_recipe 'php'
-include_recipe 'mysql::client'
+
+mysql_client 'default' do
+  action :create
+end
+
 include_recipe 'roundcube::install'
 include_recipe 'roundcube::configure'
